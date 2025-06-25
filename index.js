@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import {createInterface, askQuestion, execCommand} from './setup-script.js'
-import {setupRepository} from './setup-repository.js'
+import {createInterface, askQuestion, execCommand} from './src/setup-script.js'
+import {setupRepository} from './src/setup-repository.js'
 import cmdParameter from 'yargs';
 import path from 'node:path';
 import fs from 'node:fs'
@@ -17,7 +17,7 @@ const getProjectName = async () => {
     return projectName;
 };
 
-const customizeProject = async (projectName) => {
+const createEnvFile = async (projectName) => {
     const projectPath = path.join(process.cwd(), projectName);
 
     const cmdInput = createInterface();
@@ -73,13 +73,15 @@ const customizeProject = async (projectName) => {
     //     'const userName = undefined;',
     //     `const userName = "${userName}";`
     // );
+
+    cmdInput.close();
 }
 
 
 const main = async () => {
     const projectName = await getProjectName();
     await setupRepository(projectName);
-    await customizeProject(projectName);
+    await createEnvFile(projectName);
 };
 
 main().catch(console.error);

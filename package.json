@@ -1,5 +1,5 @@
 {
-  "name": "@naoignite/create-noaignite",
+  "name": "@mili.spasen/create-noaignite",
   "bin": {
     "create-noaignite-cms-app": "index.js"
   },
