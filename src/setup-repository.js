@@ -15,8 +15,9 @@ export const setupRepository = async (projectName) => {
   
     execCommand('npm create sanity@latest -- --dataset production --template clean --typescript --output-path ./apps/studio', { cwd: projectPath })
 
-    execCommand(`git clone --depth=1 ${TEMPLATE_REPO_URL} ${projectPath}/apps/studio`);
-    fs.rmSync(path.join(`${projectPath}/apps/studio`, '.git'), { recursive: true });
+    // To do soon
+    // execCommand(`git clone --depth=1 ${TEMPLATE_REPO_URL} ${projectPath}/apps/studio`);
+    // fs.rmSync(path.join(`${projectPath}/apps/studio`, '.git'), { recursive: true });
     
     execCommand('npx @noaignite/create-app', { cwd: projectPath });
     // execCommand('npm install', { cwd: `${projectPath}/apps/studio` });
