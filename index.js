@@ -80,7 +80,7 @@ const main = async () => {
     const templatePath = `${__dirname}/studioTemplate`;
     await setupRepository(projectName);
     await createEnvFile(projectName);
-    await createDirectoryContents(templatePath, projectName)
+    await createDirectoryContents(templatePath, `${projectName}/apps/studio`)
 };
 
 main().catch(console.error);
