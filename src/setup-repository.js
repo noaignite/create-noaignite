@@ -24,8 +24,8 @@ export const setupRepository = async (projectName) => {
     console.log("---------------------------> done! SANITY")
     console.log(" ")
     execCommand('git init', { cwd: projectPath });
-    execCommand('git add .', { cwd: projectPath });
-    execCommand('git commit -m "Initial commit"', { cwd: projectPath });
+    // execCommand('git add .', { cwd: projectPath });
+    // execCommand('git commit -m "Initial commit"', { cwd: projectPath });
     console.log(" ")
     console.log("---------------------------> done! GIT")
     console.log(" ")
