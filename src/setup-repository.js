@@ -1,4 +1,4 @@
-import { execCommand } from './setup-script.js';
+import { execCommand, createEnvFile} from './setup-script.js';
 import fs from 'node:fs'
 import path from 'node:path'
 
@@ -20,14 +20,18 @@ export const setupRepository = async (projectName) => {
     console.log("---------------------------> done! (npx @noaignite/create-app)")
     console.log(" ")
     execCommand('npm create sanity@latest -- --dataset production --template clean --typescript --output-path ./apps/studio', { cwd: projectPath })
-    console.log(" ")
+    console.warn('');
     console.log("---------------------------> done! SANITY")
-    console.log(" ")
+    console.warn('');
+
     execCommand('git init', { cwd: projectPath });
     // execCommand('git add .', { cwd: projectPath });
     // execCommand('git commit -m "Initial commit"', { cwd: projectPath });
     console.log(" ")
+
+    console.log("Don't forget to publish to GitHub later when you are ready :)")
     console.log("---------------------------> done! GIT")
     console.log(" ")
-    console.log("Don't forget to publish to GitHub later when you are ready :)")
+    return true;
+    
 };
