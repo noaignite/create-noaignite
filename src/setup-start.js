@@ -11,9 +11,10 @@ export const setupStart = async (projectName) => {
         fs.mkdirSync(projectPath);
     }
  
-    execCommand(`turbo run dev`, { cwd: projectPath });
+    execCommand(`cd apps/studio && pnpm add  @sanity/client  @sanity/icons  @sanity/image-url @sanity/ui`, { cwd: projectPath });
+    execCommand(`pnpm turbo run dev`, { cwd: projectPath });
     console.log(" ")
-    console.log("---------------------------> done! (turbo run dev)")
+    console.log("---------------------------> done! (pnpm turbo run dev)")
     console.log(" ")
  
     return true;

@@ -14,6 +14,7 @@ const main = async () => {
 
     console.warn('');
     console.warn("%c----> Start setupRepository.....",   "color: yellow; font-style: italic; background-color: blue;padding: 2px");
+    console.warn('--------> Use PNPM <-----');
     console.warn('');
     await setupRepository(projectName);
     console.warn('');
