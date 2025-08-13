@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import {createDirectoryContents, createEnvFile, getProjectAnswer} from './src/setup-script.js'
 import {setupRepository} from './src/setup-repository.js'
+import {setupStart} from './src/setup-start.js'
 import path from 'node:path';
 import { fileURLToPath } from 'node:url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -21,6 +22,8 @@ const main = async () => {
 
     await createEnvFile(projectName);
     await createDirectoryContents(templatePath, `${projectName}/apps/studio`);
+
+    await setupStart(projectName);
 
 
     console.warn('----> All steps are done!');

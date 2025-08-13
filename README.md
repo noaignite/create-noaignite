@@ -1,4 +1,4 @@
-````npx @mili.spasen/create-noaignite@1.0.1````
+````pnpm @mili.spasen/create-noaignite@1.0.1````
 
 ```npm run create-noaignite```
 
