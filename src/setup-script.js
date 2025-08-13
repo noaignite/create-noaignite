@@ -47,7 +47,7 @@ export const createDirectoryContents = (templatePath, newProjectPath) => {
                     console.error(`Error message (${newFilePath}):`, err.message);
                     return;
                 }
-                console.log(`File deleted successfully (${newFilePath}):`);
+                // console.log(`File deleted successfully (${newFilePath}):`);
                       const contents = fs.readFileSync(origFilePath, 'utf8');
 
                 // Rename
@@ -56,9 +56,9 @@ export const createDirectoryContents = (templatePath, newProjectPath) => {
                 const writePath = newFilePath;
 
                 fs.writeFileSync(writePath, contents, 'utf8');
-                console.log(" ")
-                console.log("---------------------------> done!")
-                console.log(" ")      
+                // console.log(" ")
+                // console.log("---------------------------> done!")
+                // console.log(" ")      
             });
         } else {
 
@@ -82,15 +82,15 @@ export const createDirectoryContents = (templatePath, newProjectPath) => {
                     return;
                 }
 
-                console.log(`File deleted successfully (${newFilePath})`);
+                // console.log(`File deleted successfully (${newFilePath})`);
                 fs.mkdirSync(newFilePath);
 
                 // recursive call
                 createDirectoryContents(`${templatePath}/${file}`, `${newProjectPath}/${file}`);
 
-                console.log(" ")
-                console.log("---------------------------> done!")
-                console.log(" ")
+                // console.log(" ")
+                // console.log("---------------------------> done!")
+                // console.log(" ")
                 
             })
         } else {
