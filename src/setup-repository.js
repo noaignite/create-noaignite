@@ -11,7 +11,7 @@ export const setupRepository = async (projectName) => {
         fs.mkdirSync(projectPath);
     }
  
-    execCommand(`pnpm dlx create-turbo@latest -e design-system`, { cwd: projectPath });
+    execCommand(`npx dlx create-turbo@latest .`, { cwd: projectPath });
     console.log(" ")
     console.log("---------------------------> done! (pnpm dlx create-turbo@latest)")
     console.log(" ")
@@ -19,7 +19,7 @@ export const setupRepository = async (projectName) => {
     console.log(" ")
     console.log("---------------------------> done! (npx @noaignite/create-app)")
     console.log(" ")
-    execCommand('pnpm create sanity@latest -- --dataset production --template clean --typescript --output-path ./apps/studio', { cwd: projectPath })
+    execCommand('npm create sanity@latest -- --dataset production --template clean --typescript --output-path ./apps/studio', { cwd: projectPath })
     console.warn('');
     console.log("---------------------------> done! SANITY")
     console.warn('');
