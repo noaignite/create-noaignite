@@ -14,6 +14,7 @@ const main = async () => {
 
     console.warn('');
     console.warn("%c----> Start setupRepository.....",   "color: yellow; font-style: italic; background-color: blue;padding: 2px");
+    console.warn('');
     console.warn('--------> Use PNPM <-----');
     console.warn('');
     await setupRepository(projectName);
@@ -24,10 +25,11 @@ const main = async () => {
     await createEnvFile(projectName);
     await createDirectoryContents(templatePath, `${projectName}/apps/studio`);
 
-    await setupStart(projectName);
+   
 
 
     console.warn('----> All steps are done!');
+    console.warn('----> pnpm turbo run dev');
 };
 
 main().catch(console.error);

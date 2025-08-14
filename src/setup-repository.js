@@ -21,6 +21,8 @@ export const setupRepository = async (projectName) => {
     console.log(" ")
     execCommand('npm create sanity@latest -- --dataset production --template clean --typescript --output-path ./apps/studio', { cwd: projectPath })
     console.warn('');
+    execCommand(`cd apps/studio && pnpm add  @sanity/client  @sanity/icons  @sanity/image-url @sanity/ui`, { cwd: projectPath });
+    
     console.log("---------------------------> done! SANITY")
     console.warn('');
 
