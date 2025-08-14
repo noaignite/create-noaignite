@@ -11,7 +11,7 @@ export const setupRepository = async (projectName) => {
         fs.mkdirSync(projectPath);
     }
  
-    execCommand(`npx dlx create-turbo@latest .`, { cwd: projectPath });
+    execCommand(`npx create-turbo@latest .`, { cwd: projectPath });
     console.log(" ")
     console.log("---------------------------> done! (pnpm dlx create-turbo@latest)")
     console.log(" ")
